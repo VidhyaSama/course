@@ -1,0 +1,4 @@
+com\microservices\currencyexchangeservice\Repository\ExchangeValueRepository.class
+com\microservices\currencyexchangeservice\CurrencyExchangeServiceApplication.class
+com\microservices\currencyexchangeservice\controller\CurrencyExchangeController.class
+com\microservices\currencyexchangeservice\model\ExchangeValue.class

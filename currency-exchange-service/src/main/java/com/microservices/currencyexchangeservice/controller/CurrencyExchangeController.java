@@ -1,14 +1,16 @@
 package com.microservices.currencyexchangeservice.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 
-import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.microservices.currencyexchangeservice.Repository.ExchangeValueRepository;
 import com.microservices.currencyexchangeservice.model.ExchangeValue;
+
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -18,6 +20,7 @@ public class CurrencyExchangeController {
 
 	@Autowired
 	private Environment environment;
+	
 
 	@Autowired
 	private ExchangeValueRepository repository;
@@ -28,7 +31,7 @@ public class CurrencyExchangeController {
 		ExchangeValue exchangeValue = repository.findByFromAndTo(from, to);
 
 		exchangeValue.setPort(Integer.parseInt(environment.getProperty("local.server.port")));
-       log.info("{}"+exchangeValue);
+       log.info("{}"+exchangeValue );
 		return exchangeValue;
 	}
 

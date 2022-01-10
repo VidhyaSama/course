@@ -15,6 +15,7 @@ public class CurrencyExchangeServiceApplication {
 		SpringApplication.run(CurrencyExchangeServiceApplication.class, args);
 	}
 
+	
 	@Bean
 	public Sampler defaultSampler()
 	{
